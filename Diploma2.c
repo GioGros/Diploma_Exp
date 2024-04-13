@@ -1,18 +1,13 @@
 #include <stdio.h>
 
-#define x 5
-
 int main() {
-    int y = 0;
-    int z;
+    char userInput[50];
+    printf("Введите строку: ");
+    scanf("%s", userInput); 
 
-    z = x / y;
+    printf("Вы ввели: ");
+    printf(userInput); 
 
-    int unused_variable;
-
-    if (x == 5) {  
-        printf("x is 5\n");
-    }
-
+    printf("\nПрограмма завершена\n");
     return 0;
 }
