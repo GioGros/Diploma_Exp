@@ -1,20 +1,18 @@
 #include <stdio.h>
+#include <string.h>
+
+void vulnerableFunction(const char *input) {
+    char buffer[10];
+    strcpy(buffer, input); 
+}
 
 int main() {
-    int x = 10;
-    int y = 0;
-    int z;
+    char userInput[20];
+    printf("Введите строку: ");
+    gets(userInput); 
 
-    // Деление на ноль
-    z = x / y;
+    vulnerableFunction(userInput);
 
-    // Неиспользуемая переменная
-    int unused_variable;
-
-    // Операция сравнения вместо присваивания
-    if (x = 5) {
-        printf("x is 5\n");
-    }
-
+    printf("Программа завершена\n");
     return 0;
 }
