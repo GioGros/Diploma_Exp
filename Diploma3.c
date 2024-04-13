@@ -1,17 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    int x = 10;
-    int y = 0;
-    int z;
+    // Неправильное выделение памяти
+    int *ptr = (int *)malloc(5 * sizeof(int)); // Выделяем память для 5 целых чисел
+    ptr[5] = 10; // Обращаемся к элементу за пределами выделенной памяти
 
-    z = x / y;
+    // Неправильное освобождение памяти
+    free(ptr); // Освобождаем память
+    free(ptr); // Повторное освобождение уже освобожденной памяти
 
-    int unused_variable;
-
-    if (x == 5) {
-        printf("x is 5\n");
-    }
+    // Использование освобожденной памяти
+    int *newPtr = (int *)malloc(3 * sizeof(int));
+    free(newPtr);
+    newPtr[0] = 5; // Используем освобожденную память
 
     return 0;
 }
