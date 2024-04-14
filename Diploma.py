@@ -1,4 +1,3 @@
-import re
 import requests
 import dgl
 import torch
